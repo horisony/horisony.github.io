@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"  content="text/html; charset=utf-8">  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Copatible" content="IE=edge">
+    <meta name="viewport"  content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>Nous</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- <meta http-equiv="refresh" content="1" > -->
+</head>
+<body>
+	<div class="module banner banner-responsive" style="background-color:#ef754f; overflow: hidden;">
+		<div class="content clearfix">
+			<div class="col-md-6-my intro" style="padding-top: 80px;">
+				<div class="title">Nous Mobile App</div>
+				<div class="txt txt-intro" style="color: rgba(255, 255, 255, 0.9); ">Nous Mobile App is the mobile app version of Nous website which monitors the traffic data of eBay site. Mobile app enables users to check the traffic data of eBay site at any time and any place.</div>
+			</div>
+			<div class="col-md-6-my">
+				<img class="img-ai-intro" style="width: 55%;" src="imgs/pro-nous/intro.png">
+			</div>
+		</div>
+	</div>
+
+	<div class="module" >
+		<div class="content clearfix" >
+			<div class="title-main">Web version of Nous</div>
+			<div class="txt-main" style="text-align: left; color: #333;">The web version of Nous was designed by another designer. I designed the mobile app version of Nous a few weeks later after the web version was released, according to users's feedback that they want to check the data on their mobile phone. </div>
+			<img style='width: 100%; padding: 20px 0;' src="imgs/pro-nous/web.png">
+		</div>
+	</div>
+	<div class="module" style="background-color: #ddd;">
+		<div class="content clearfix" style="width: 100%;">
+			<div class="title-main">Mockups</div>
+			<div class="txt-main" style="text-align: left; color: #333; padding: 4px 22%;">Below is my design of Nous App. I mainly redesigned the filters so that users can manipulate them easily on the small screen of mobile phone.</div>
+			<img style='width: 100%; padding: 20px 0;' src="imgs/pro-nous/mobile.png">
+		</div>
+	</div>
+
+	
+
+
+	<a href="#"><div class="to-top"></div></a>
+	
+	<div class="footer ports">
+		This website is designed and developed by Baoling Yang, all copyright reserved.<br/>
+		Copyright @杨宝玲 2017
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() { 			
+			$(".to-top").hide();
+			currTop = 0;
+			$(window).scroll(function(){
+				var windowTop = $(window).scrollTop()||0;
+				if (windowTop > 200){
+					$(".to-top").fadeIn(300);
+				}
+				else{
+					$(".to-top").fadeOut(300);
+				}
+				if(windowTop >= currTop){
+					$(".navbar").addClass("navbar-hide");
+				}else{
+					$(".navbar").removeClass("navbar-hide")
+					if(windowTop > 20){
+						$(".navbar").addClass("navbar-custom");
+					}else{
+						$(".navbar").removeClass("navbar-custom");
+					}
+				}
+
+				currTop = windowTop;
+
+			});
+
+			$(".tags>.btn").click(function(){
+				$(this).siblings().removeClass("active");
+				$(this).addClass("active");
+			});
+		});
+		var myVideo0 = document.getElementById("video0"); 
+		var myBtn0 = document.getElementById("play-btn0"); 
+		function playPause0() { 
+			// myBtn1.setAttribute('src', 'imgs/play-btn.svg');
+		    if (myVideo0.paused) {
+		    	myVideo0.play();
+		    	myVideo0.controls="controls";
+		    	// myBtn1.attr('src', 'imgs/pause-btn.svg'); 
+		    	myBtn0.style.display="none";
+
+		    } else {
+		        myVideo0.pause();
+		        // myBtn1.setAttribute('src', 'imgs/pause-btn.svg');
+		        myBtn0.style.display="inline-block";
+		    }
+		}  
+		var myVideo1 = document.getElementById("video1"); 
+		var myBtn1 = document.getElementById("play-btn1"); 
+		
+		function playPause1() { 
+			// myBtn1.setAttribute('src', 'imgs/play-btn.svg');
+		    if (myVideo1.paused) {
+		    	myVideo1.play();
+		    	// myBtn1.attr('src', 'imgs/pause-btn.svg'); 
+		    	myBtn1.style.display="none";
+		    } else {
+		        myVideo1.pause();
+		        // myBtn1.setAttribute('src', 'imgs/pause-btn.svg');
+		        myBtn1.style.display="inline-block";
+		    }
+		} 
+
+		var myVideo2 = document.getElementById("video2");
+		var myBtn2 = document.getElementById("play-btn2");  
+		function playPause2() { 
+		    if (myVideo2.paused){
+		        myVideo2.play();
+		        myBtn2.style.display="none"; 
+		    }
+		    else{
+		        myVideo2.pause(); 
+		        myBtn2.style.display="inline-block";
+		    } 
+		} 
+	</script>
+
+</body>
+</html>

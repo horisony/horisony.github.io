@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"  content="text/html; charset=utf-8">  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Copatible" content="IE=edge">
+    <meta name="viewport"  content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>Redesign Practice</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="module banner banner-responsive" style="background-color:#ef754f; overflow: hidden;">
+		<div class="content clearfix">
+			<div class="col-md-6-my intro" style="padding-top: 80px;">
+				<div class="title">Redesign China Mobile app</div>
+				<div class="txt txt-intro" style="color: rgba(255, 255, 255, 1); ">This is a personal design practice. I tried redesigning China Mobile app by doing user research, then redesigned the interface according to the research and ux design principles.</div>
+			</div>
+			<div class="col-md-6-my">
+				<img class="img-ai-intro" style="width: 55%;" src="imgs/pro-redesign-china/intro-redesign.png">
+			</div>
+		</div>
+	</div>
+	<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1">User Research</div>
+			<div class="txt1" >China Mobile app is tool for China Mobile users to manage their phone package. Before redesigning, I interviewed 7 China Mobile users, and found that most of them use the app for almost the same things: check data usage, check account balance, check the bill, top up, etc. Their usage frequency of the app is as follows:</div>
+			<img style="width: 100%; margin: 20px 0;" src="imgs/pro-redesign-china/user.png">
+			<div class="txt1" >
+				According to the research, 3 highest frequent usage of the app is to check data usage, check account balance and top up.<br/><br/>
+			</div>
+		</div>
+	</div>
+
+	<div class="module" style="background-color: #f7f6f5;">
+		<div class="content">
+		<div class="title1">Home Page Redesign</div>
+		<div class="txt1" >Since "top up" is already on home page, but "data usage" and "account balance" are not shown directly on home page, I decided to add these information.
+			Along with "data usage" and "account balance", I added "bill this month", assuming it's as important as the former 2. The following image shows the comparision between "before redesign" and "after redesign".
+		</div>
+		<img style="width: 100%; margin: 20px 0;" src="imgs/pro-redesign-china/1.png">
+		</div>
+	</div>
+	<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1">Service Handling Page Redesign</div>
+			<div class="txt1">In this page, the original design is like the first screenshot in the following image, with lots of options in one page, resulting in small clickable area for every link. <br/><br/>
+			In my design, the 2nd and 3rd interface, I tried to enlarge the clickable area, leaving only the most important links in this page. Version 1(the image in the middle) obviouly leave out too many options, may lead to decline in CTR. So I had version 2 (the 3rd image), which strikes a balance between conciseness and business goal.
+			</div>
+			<img style="width: 100%; margin: 20px 0;" src="imgs/pro-redesign-china/2.png">
+
+		</div>
+	</div>
+	<div class="module" style="background-color: #f7f6f5;">
+		<div class="content">
+		<div class="title1">Top-up Page Redesign</div>
+			<div class="txt1">To top up, the original design takes 2 steps to complete, with lots of distracting compontents on every page. I combined the 2 steps into one, and enlarged the components that need to draw users' attention while reducing the size of others.</div>
+			<img style="width: 100%; margin: 20px 0;" src="imgs/pro-redesign-china/3.png">
+		</div>
+	</div>
+
+	<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1"> Campaign Page Motion Design</div>
+			<div class="txt1">In the original design, there is a static header on the top, taking almost 1/6 of the screen. But the header is not as important as the content. So I decided to save screen space by motion design. As is shown in the following gif, the header expands when users pull down the page, and collapsed into only text when users begin to scroll up, thus saving screen space when users are browsing campaigns while showing icons on the header to guide them to go to other tab when they're trying to find more by pulling page down.</div>
+			<div class="design-container clearfix" style="background: #bebebe; margin: 20px 0;">
+				<div class="col-md-6 col-md-6-my">
+					<div class="design-title" >Before Redesign (static)</div><img style="width: 80%;" src="imgs/pro-redesign-china/4.png">
+				</div>
+				<div class="col-md-6 col-md-6-my">
+					<div class="design-title" >After Redesign (motion design)</div><img style="width: 80%;" src="imgs/pro-redesign-china/5.gif">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<a href="#"><div class="to-top"></div></a>
+	
+	<div class="footer ports">
+		This website is designed and developed by Baoling Yang, all copyright reserved.<br/>
+		Copyright @杨宝玲 2017
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() { 			
+			$(".to-top").hide();
+			currTop = 0;
+			$(window).scroll(function(){
+				var windowTop = $(window).scrollTop()||0;
+				if (windowTop > 200){
+					$(".to-top").fadeIn(300);
+				}
+				else{
+					$(".to-top").fadeOut(300);
+				}
+				if(windowTop >= currTop){
+					$(".navbar").addClass("navbar-hide");
+				}else{
+					$(".navbar").removeClass("navbar-hide")
+					if(windowTop > 20){
+						$(".navbar").addClass("navbar-custom");
+					}else{
+						$(".navbar").removeClass("navbar-custom");
+					}
+				}
+
+				currTop = windowTop;
+
+			});
+
+			$(".tags>.btn").click(function(){
+				$(this).siblings().removeClass("active");
+				$(this).addClass("active");
+			});
+		});
+
+	
+	</script>
+
+</body>
+</html>

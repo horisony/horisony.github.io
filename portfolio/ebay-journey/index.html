@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: Verdana,sans-serif;
+		}
+		.bg-container{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: #454A4C; 
+			background-image: url(imgs/walking-bg.png);
+			background-repeat-y: no-repeat;	
+		}
+		.bg-animation{
+			animation: bg-moving 60s;
+			animation-timing-function: linear;
+		}
+		.people{
+			position: absolute;
+			top: 220px;
+			left: 200px;
+		}
+		.walking{
+			width: 200px;
+			height: 400px;
+			background-image: url(imgs/walking.png);
+			background-position: 0px 0px;
+			animation: walking-anim 1s infinite;	
+		}
+		.to-end{
+			animation: ending 60s linear;
+			/*animation-play-state: paused;*/
+		}
+		@keyframes ending {
+			0% {left: 200px;}
+			100% {left: 8200px;}
+		}
+
+		.line{
+			width: 290px;
+			height: 1px;
+			background: rgba(255,255,255,0.5);
+			top: 600px;
+			position: relative;
+		}
+		.time-dot{
+			width: 32px;
+			height: 32px;
+			background: rgba(255,255,255,0.2);
+			border-radius: 50%;
+			position: absolute;
+			/*top: 585px;*/
+			left: 274px;
+			top: -16px;
+		}
+		.time-dot-small{
+			width: 16px;
+			height: 16px;
+			background: rgba(255,255,255,0.4);
+			border-radius: 50%;
+			position: absolute;
+			left: 282px;
+			top: -8px;
+		}
+		.time-dot-smaller{
+			width: 4px;
+			height: 4px;
+			background: rgba(255,255,255,0.6);
+			border-radius: 50%;
+			position: absolute;
+			left: 288px;
+			top: -2px;
+		}
+		.event-txt{
+			color: #156279;
+			width: 300px;
+			text-align: right;
+			position: absolute;
+			left: 70px;
+			top: 160px;
+		}
+		.discrip{
+			font-size: 14px;
+			padding-top: 12px;
+			color: #666;
+		}
+		.time-txt{
+			color: white;
+			font-size: 16px;
+			position: absolute;
+			left: 254px;
+			text-align: center;
+			top: 20px;
+		}
+		.bubble{
+			/*width: 160px;
+			height: 160px;
+			background: url(bubble.svg);
+			background-repeat: no-repeat;*/
+			position: fixed;
+			left: 340px;
+			top: 110px;
+		}
+		#fashion{
+			background-image: url(imgs/fashion.jpg);
+		}
+		@keyframes walking-anim{
+			0% {background-position-x: 1400px; }
+			12.5% {background-position-x: 1400px; }
+			12.501% {background-position-x: 1200px; }
+			25% {background-position-x: 1200px; }
+			25.001% {background-position-x: 1000px; }
+			37.5% {background-position-x: 1000px; }
+			37.501% {background-position-x: 800px; }
+			50% {background-position-x: 800px; }
+			50.001% {background-position-x: 600px; }
+			62.5% {background-position-x: 600px; }
+			62.501% {background-position-x: 400px; }
+			75% {background-position-x: 400px; }
+			75.001% {background-position-x: 200px; }
+			87.5% {background-position-x: 200px; }
+			87.501% {background-position-x: 0px; }
+			99.9999% {background-position-x: 0px; }
+		}
+		@keyframes bg-moving{
+			100% {background-position-x: 0px }
+			0% {background-position-x: 8000px;}
+		}
+		@keyframes dot-moving{
+			0% {left: 0;}
+			100% {left: -8000px;}
+		}
+		.dot-moving{
+			animation: dot-moving 60s;
+			animation-timing-function: linear;
+		}
+		.musicIcon{
+			width: 36px;
+			height: 36px;
+			background-image: url(imgs/music.png);
+			background-position: center;
+			background-repeat: no-repeat;
+			position: fixed;
+			top: 24px;
+			right: 30px;
+			z-index: 100000000; 
+		}
+		.musicAnimate{
+			animation: rotating 1.2s infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes rotating{
+			0% {transform: rotate(0deg);}
+			100% { transform: rotate(360deg); }
+		}
+		.dot-animate{
+			animation: glowing .8s infinite;
+		}
+		@keyframes glowing{
+			0%{
+				transform: scale(0);
+			}
+			100%{
+				transform: scale(1);
+			}
+		}
+		#pause{
+			position: fixed;
+			top: 10px;
+			left: 12px;
+		}
+		#continue{
+			position: fixed;
+			top: 10px;
+			left: 96px;
+		}
+		#ending{
+			position: fixed;
+			top: 10px;
+			left: 198px;
+		}
+		.animation-pause{
+			animation-play-state: paused;
+		}
+		.animation-running{
+			animation-play-state: running;
+		}
+		#shopping,#timeDot{
+			opacity: 0;
+			transition: opacity .4s;
+		}
+		#timeDot{
+			position: absolute;
+		}
+		.starting-page{
+			position: absolute;
+			height: 100vh;
+			width: 100%;
+			background: #DDF6FE;
+			z-index: 10000000;
+			text-align: center;
+			transition: top 1s ease-out;
+			top: 0;
+			/*box-shadow: 0 2px 12px #ddd;*/
+		}
+		.starting{
+			top: -120%;
+			opacity: none;
+			/*left: 0;*/
+			/*animation: home-up 1s;*/
+		}
+		.welcome-container{
+			width: 800px;
+			margin: 280px auto 0 auto;
+			position: relative;
+		}
+		.welcome-title{
+			font-size: 24px;
+			line-height: 150%;
+			color: #156279;
+			font-family: "Helvetica Neue", Arial, sans-serif;
+			text-align: left;
+			padding-left: 280px;
+		}
+		#launch-btn{
+			background: #186bb3;
+			border: #2668e3;
+			color: white;
+			padding: 10px 18px;
+			border-radius: 4px;
+			font-size: 18px;
+			margin-top: 20px;
+		}
+		#launch-btn:hover{
+			background: #3585c7;
+		}
+		.play-btn{
+			background: #186bb3;
+			border: #2668e3;
+			color: white;
+			padding: 6px 14px;
+			border-radius: 4px;
+			font-size: 16px;
+			margin-top: 20px;
+		}
+		.play-btn:hover{
+			background: #3585c7;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src='js/jquery-3.1.1.min.js'></script>
+</head>
+<body>
+	<div class="starting-page">
+		<div class="welcome-container">
+			<div class="welcome-title">Welcome, Baoling!<br/>Let's begin your 2016 eBay Journey.<br/><a href="javascript:continueAnimation();"><button id="launch-btn"> Launch </button></a></div>
+			<div class="people" style="left: 30px; top: -90px;">
+				<div class="walking" id="walking-people-home"></div>
+			</div>
+		</div>
+	</div>
+	<div class="bg-container bg-animation" id = "bg">
+		<a href="javascript:pauseAnimation();"><button id="pause" class="play-btn">pause</button></a>
+		<a href="javascript:continueAnimation();"><button id="continue" class="play-btn">continue</button></a>
+		<!-- <a href="javascript:ending();"><button id="ending" class="play-btn">end</button></a> -->
+		<a href="javascript:playPause();"><div class="musicIcon musicAnimate" id="music_btn"></div></a>
+		<audio id="music" autoplay="autoplay" loop="-1">
+			<source src="sound/mario_1.mp3" type="audio/mp3" />
+			<source src="sound/mario_1.ogg" type="audio/ogg" />
+			<embed  src="sound/mario_1.mp3" />
+		</audio>
+		<!-- <bgsound url="mario_1.mp3" loop=auto></bgsound> -->
+		<div id="shopping">
+			<div class="event-txt">
+				First Purchase
+				<div class="discrip">2016 Fashion Sexy Women Summer Chiffon Long Sleeve T-Shirt Tops Blouse</div>
+			</div>
+			<svg class="bubble" width="200" height="200"version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
+				 <defs>
+				 	<pattern id="img1" patternUnits="userSpaceOnUse" width="160" height="160">
+				 		<image xlink:href="imgs/fashion.jpg" x="30" y="30" width="90" height="90" />
+				 	</pattern>
+				 </defs>
+				<g>
+					<image overflow="visible" opacity="0.75" width="590" height="590" xlink:href="imgs/BFC8B6339AD39AA5.png"  transform="matrix(0.24 0 0 0.24 3.2668 -0.3968)"></image>
+					<g>
+						<path fill="url(#img1)" d="M74.1,33.6c-19.2,0-34.8,15.6-34.8,34.8c0,5.8,2.5,12.3,2.5,12.3c0.8,2.1,1.2,5.5,0.9,7.7l-0.9,6.8
+							c-0.3,2.2,1.3,3.8,3.5,3.7l6.6-0.5c2.2-0.2,5.6,0.4,7.6,1.3c0,0,7.9,3.5,14.5,3.5c19.2,0,34.8-15.6,34.8-34.8S93.3,33.6,74.1,33.6
+							z"/>
+					</g>
+				</g>
+			</svg>
+		</div>
+
+		<div class="people" id="people1">
+			<div class="walking" id="walking-people"></div>
+		</div>
+
+		<div class="line">
+			<div class="time-dot-smaller" ></div>
+			<div id="timeDot">
+				<div class="time-dot dot-animate"></div>
+				<div class="time-dot-small" ></div>
+				<div class="time-txt">
+					2016.2.1
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var people = document.getElementById('walking-people');
+		var people1 = document.getElementById('people1');
+		var bg = document.getElementById("bg");
+		var shopping = document.getElementById("shopping");
+		var timeDot = document.getElementById("timeDot");	
+		bg.classList.remove("animation-running");
+		bg.classList.add("animation-pause");
+		people.classList.remove("animation-running");
+		people.classList.add("animation-pause");
+
+		function playPause() { 
+		    var music = document.getElementById('music'); 
+		    var music_btn = document.getElementById('music_btn'); 		    
+		    if (music.paused){ 
+		    	music.play();
+		    	music_btn.classList.remove("animation-pause");
+		        music_btn.classList.add("animation-running");  
+		    } 
+		    else { 
+		        music.pause();  
+		        music_btn.classList.remove("animation-running");
+		        music_btn.classList.add("animation-pause");
+		    } 
+		}
+		function pauseAnimation(){		
+			bg.classList.remove("animation-running");
+			bg.classList.add("animation-pause");
+			people.classList.remove("animation-running");
+			people.classList.add("animation-pause");
+			shopping.style.opacity = "1";
+			timeDot.style.opacity = "1";
+			timeDot.classList.remove("dot-moving");
+		} 
+
+		function continueAnimation(){
+			bg.classList.remove("animation-pause");
+			bg.classList.add("animation-running");
+			people.classList.remove("animation-pause");
+			people.classList.add("animation-running");
+			shopping.style.opacity = "0";
+			timeDot.classList.add("dot-moving");
+		}
+
+		function ending() {
+			bg.classList.remove("animation-running");
+			bg.classList.add("animation-pause");
+			people.classList.remove("animation-pause");
+			people.classList.add("animation-running");
+			people1.classList.add('to-end');
+			var leftPos = 200;
+			function moveToEnd(){
+				if ((window.innerWidth - leftPos) <= 400){
+					people1.classList.add('animation-pause');
+					leftPos == people1.offsetLeft;
+				}
+			}
+		}
+
+		// $('#ending').click(function(){
+		// 	$("#bg").addClass("animation-pause").removeClass("animation-running");		
+		// 	$('#walking-people').removeClass("animation-pause").addClass("animation-running");
+		// 	if (($(window).width()-$('#people1').offset().left-200) > 200)
+		// 	{
+		// 		$('#people1').addClass('to-end');
+		// 	}else{
+		// 		$('#people1').addClass("animation-pause");
+		// 	}
+		// })
+
+		$('#launch-btn').click(function(){
+			$('.starting-page').addClass('starting');
+			$("#bg").removeClass("animation-pause").addClass("animation-running");		
+			$('#walking-people').removeClass("animation-pause").addClass("animation-running");
+			$('#timeDot').addClass("dot-moving");
+		});
+	</script>
+</body>
+</html>

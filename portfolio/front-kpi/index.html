@@ -1,0 +1,2790 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"  content="text/html; charset=utf-8">  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Copatible" content="IE=edge">
+    <meta name="viewport"  content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>KPI Dashboard</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" media="all" href="https://m1.corp.ebay.com/marketing/resources/css/daterangepicker-bs2.css" />
+    <link href="https://m1.corp.ebay.com/marketing/resources/css/bootstrap/bootstrap-select.css" rel="stylesheet"/>
+    <link href="http://gro.corp.ebay.com/gro/resources/css/jquery.dataTables.css" rel="stylesheet">
+</head>
+<body>
+	<div class="m1-container">
+	<!--filter panel begin-->		
+		<div class="col-md-12 filter-container clearfix" style="box-sizing: border-box;" id="filter-panel">
+			<div class="filter" style="position:relative;" >
+				<label>Week Begin Date</label>
+				<div style="position:relative; z-index: 1000000000000;" >
+					<input type="text" class="form-control" value="12/12/2016" id="week-end-date" style="padding-left:26px;width:150px;"/>
+					<i class="glyphicon glyphicon-calendar" style="position:absolute;bottom: 10px;left: 10px;top: auto;cursor: pointer;"></i>
+				</div>
+			</div>
+
+			<div class="filter">
+				<label>Device</label>
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" style="width: 120px;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						<span class="filter-option pull-left" title="All">All </span>
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>						
+					</ul>
+				</div>
+			</div>
+			<!-- <div class="filter">	
+				<div><button type="button" class="btn btn-primary">Apply</button></div>
+			</div> -->
+		</div>
+	<!--filter panel end-->
+		
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs" role="tablist" id="tab">
+		<li role="presentation" class="tab-overview active">
+			<a href="#tab-overview" aria-controls="home" role="tab" data-toggle="tab">Overview</a>
+		</li>
+		<li role="presentation" class="tab-crm">
+			<a href="#tab-crm" aria-controls="profile" role="tab" data-toggle="tab">CRM</a>
+		</li>
+		<li role="presentation" class="tab-paidSearch">
+			<a href="#tab-paidSearch" aria-controls="messages" role="tab" data-toggle="tab">Paid Search</a>
+		</li>
+		<li role="presentation" class="tab-ePN">
+			<a href="#tab-ePN" aria-controls="settings" role="tab" data-toggle="tab">ePN</a>
+		</li>
+		<li role="presentation" class="tab-paidSocial">
+			<a href="#tab-paidSocial" aria-controls="settings" role="tab" data-toggle="tab">Paid Social</a>
+		</li>
+		<li role="presentation" class="tab-display">
+			<a href="#tab-display" aria-controls="settings" role="tab" data-toggle="tab">Display</a>
+		</li>
+		<li role="presentation" class="tab-socialAm">
+			<a href="#tab-socialAm" aria-controls="settings" role="tab" data-toggle="tab">Social Amplification</a>
+		</li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content" >
+		<div role="tabpanel" class="tab-pane active clearfix" id="tab-overview">
+			<!-- CRM Column -->
+			<div class="col-overview">
+				<div class="title">CRM</div>
+				<div class="line-vertical"></div>
+				<table class="crm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">Unsub Count</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="crm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">House File</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="crm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">Sends</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="crm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">Open Reach</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="crm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">Open Rate</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="crm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">Click Rate</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="crm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">GMB/Send</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div><!-- CRM Column ends -->
+
+			<!-- Paid Search Column -->
+			<div class="col-overview">
+				<div class="title">Paid Search</div>
+				<div class="line-vertical"></div>
+				<table class="paidSearch-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSearch-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSearch-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSearch-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSearch-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSearch-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSearch-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div><!-- Paid Search Column ends-->
+
+			<!-- ePN Column -->
+			<div class="col-overview">
+				<div class="title">ePN</div>
+				<div class="line-vertical"></div>
+				<table class="ePN-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="ePN-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="ePN-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="ePN-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="ePN-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="ePN-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="ePN-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div><!-- ePN Column ends-->
+
+			<!-- Paid Social Column -->
+			<div class="col-overview">
+				<div class="title">Paid Social</div>
+				<div class="line-vertical"></div>
+				<table class="paidSocial-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSocial-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSocial-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSocial-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSocial-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSocial-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="paidSocial-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div><!-- Paid Social Column ends -->
+
+
+			<!-- Display Column -->
+			<div class="col-overview">
+				<div class="title">Display</div>
+				<div class="line-vertical"></div>
+				<table class="display-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="display-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="display-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="display-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="display-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="display-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="display-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div><!-- Display Column ends -->
+
+
+			<!-- Social Amplification Column -->
+			<div class="col-overview">
+				<div class="title">Social Amplification</div>
+				<div class="line-vertical"></div>
+				<table class="socialAm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="socialAm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="socialAm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="socialAm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="socialAm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="socialAm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table class="socialAm-overview" style="cursor: pointer;">
+					<tr class="title-heavy">
+						<th colspan="3">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th>$</th>
+						<th>YoY</th>
+						<th>WoW</th>
+					</tr>
+					<tr>
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div><!-- Social Amplification Column ends -->
+		</div>
+		<div role="tabpanel" class="tab-pane clearfix" id="tab-crm">
+			<div class="metric-detail">
+				<div class="title">Metric</div>
+				<div class="line-vertical" style="background: #ccc;"></div>
+				<div class="line-horizontal"></div>
+				<table style="cursor: pointer;" class="detail-table 1th active">	
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 2th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 3th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 4th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 5th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 6th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 7th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div>
+			<div class="segments-detail">
+				<div class="title">Segments and Trend</div>
+				<div class="segments-container clearfix">
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Marketing Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>Unsub Count - Marketing Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Site Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>Unsub Count - Site Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Sends</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>Unsub Count - Sends</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="tab-paidSearch">
+			<div class="metric-detail">
+				<div class="title">Metric</div>
+				<div class="line-vertical" style="background: #ccc;"></div>
+				<div class="line-horizontal"></div>
+				<table style="cursor: pointer;" class="detail-table 1th active">	
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 2th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 3th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 4th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 5th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 6th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 7th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div>
+			<div class="segments-detail">
+				<div class="title">Segments and Trend</div>
+				<div class="segments-container clearfix">
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Marketing Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXXX - Marketing Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Site Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Site Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Sends</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Sends</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="tab-ePN">
+			<div class="metric-detail">
+				<div class="title">Metric</div>
+				<div class="line-vertical" style="background: #ccc;"></div>
+				<div class="line-horizontal"></div>
+				<table style="cursor: pointer;" class="detail-table 1th active">	
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 2th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 3th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 4th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 5th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 6th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 7th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div>
+			<div class="segments-detail">
+				<div class="title">Segments and Trend</div>
+				<div class="segments-container clearfix">
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Marketing Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXXX - Marketing Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Site Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Site Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Sends</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Sends</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="tab-paidSocial">
+			<div class="metric-detail">
+				<div class="title">Metric</div>
+				<div class="line-vertical" style="background: #ccc;"></div>
+				<div class="line-horizontal"></div>
+				<table style="cursor: pointer;" class="detail-table 1th active">	
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 2th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 3th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 4th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 5th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 6th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 7th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div>
+			<div class="segments-detail">
+				<div class="title">Segments and Trend</div>
+				<div class="segments-container clearfix">
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Marketing Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXXX - Marketing Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Site Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Site Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Sends</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Sends</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="tab-display">
+			<div class="metric-detail">
+				<div class="title">Metric</div>
+				<div class="line-vertical" style="background: #ccc;"></div>
+				<div class="line-horizontal"></div>
+				<table style="cursor: pointer;" class="detail-table 1th active">	
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 2th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 3th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 4th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 5th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 6th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 7th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div>
+			<div class="segments-detail">
+				<div class="title">Segments and Trend</div>
+				<div class="segments-container clearfix">
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Marketing Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXXX - Marketing Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Site Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Site Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Sends</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Sends</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="tab-socialAm">
+			<div class="metric-detail">
+				<div class="title">Metric</div>
+				<div class="line-vertical" style="background: #ccc;"></div>
+				<div class="line-horizontal"></div>
+				<table style="cursor: pointer;" class="detail-table 1th active">	
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 2th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 3th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 4th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 5th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 6th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+
+				<table style="cursor: pointer;" class="detail-table 7th">
+					<tr class="title-heavy">
+						<th colspan="6">XXXXXXX</th>
+					</tr>
+					<tr class="title-light">
+						<th colspan="2">US</th>
+						<th colspan="2">UK</th>
+						<th colspan="2">DE</th>
+					</tr>
+					<tr class="small-th">
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+						<th>$</th>
+						<th>YoY</th>
+					</tr>
+					<tr class="detail-td">
+						<td class="data-main">872,917</td>
+						<td class="data-plus">3%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+						<td class="data-main">872,917</td>
+						<td class="data-minus">-2%</td>
+					</tr>
+				</table>
+			</div>
+			<div class="segments-detail">
+				<div class="title">Segments and Trend</div>
+				<div class="segments-container clearfix">
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Marketing Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXXX - Marketing Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Site Email</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Site Email</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-1-3">
+						<table>
+							<tr class="title-heavy">
+								<th colspan="6">Sends</th>
+							</tr>
+							<tr class="title-light">
+								<th colspan="2">US</th>
+								<th colspan="2">UK</th>
+								<th colspan="2">DE</th>
+							</tr>
+							<tr class="small-th">
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+								<th>$</th>
+								<th>YoY</th>
+							</tr>
+							<tr class="detail-td">
+								<td class="data-main">872,917</td>
+								<td class="data-plus">3%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+								<td class="data-main">872,917</td>
+								<td class="data-minus">-2%</td>
+							</tr>
+						</table>
+						<table class="chart-table">
+							<tr class="title-heavy">
+								<th>XXXXX - Sends</th>
+							</tr>
+							<tr class="segment-td">
+								<td>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+									<div style="height: 250px; padding-top: 100px;">...Put the chart here...</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--tab ends-->
+
+	</div>
+
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://nous.corp.ebay.com/nous-resources/plugins/moment/moment.min.js"></script>
+<script type="text/javascript" src="https://m1.corp.ebay.com/marketing/resources/js/daterangepicker.js"></script> 
+<script src="http://gro.corp.ebay.com/gro/resources/js/lib/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('.glyphicon-calendar').click(function() {
+			$(this).parent().find('input').click();
+		});
+
+		$('#week-end-date').daterangepicker({
+			singleDatePicker: true,
+			startDate: moment()
+		});
+		var options = {
+			"applyClass" : "btn-primary",
+			"opens" :"right"
+		};
+		options.ranges = {
+			'Today': [moment(), moment()],
+			'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+			'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+			'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+			'This Month': [moment().startOf('month'), moment().endOf('month')],
+			'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+		};
+		$('.crm-overview').click(function(){
+			$('#tab>li').removeClass('active');
+			$('.tab-pane').removeClass('active');
+			$('.tab-crm').addClass('active');
+			$('#tab-crm').addClass('active');
+
+		});
+		$('.paidSearch-overview').click(function(){
+			$('#tab>li').removeClass('active');
+			$('.tab-pane').removeClass('active');
+			$('.tab-paidSearch').addClass('active');
+			$('#tab-paidSearch').addClass('active');
+		});
+		$('.ePN-overview').click(function(){
+			$('#tab>li').removeClass('active');
+			$('.tab-pane').removeClass('active');
+			$('.tab-ePN').addClass('active');
+			$('#tab-ePN').addClass('active');
+		});
+		$('.paidSocial-overview').click(function(){
+			$('#tab>li').removeClass('active');
+			$('.tab-pane').removeClass('active');
+			$('.tab-paidSocial').addClass('active');
+			$('#tab-paidSocial').addClass('active');
+		});
+		$('.display-overview').click(function(){
+			$('#tab>li').removeClass('active');
+			$('.tab-pane').removeClass('active');
+			$('.tab-display').addClass('active');
+			$('#tab-display').addClass('active');
+		});
+		$('.socialAm-overview').click(function(){
+			$('#tab>li').removeClass('active');
+			$('.tab-pane').removeClass('active');
+			$('.tab-socialAm').addClass('active');
+			$('#tab-socialAm').addClass('active');
+		});
+		$('.detail-table').click(function(){
+			$('.detail-table').removeClass('active');
+			$(this).addClass('active');
+			// $('.line-horizontal').css('top', '170px');
+		});
+		$('.detail-table.1th').click(function(){
+			$('.line-horizontal').css('top', '40px');
+		});
+		$('.detail-table.2th').click(function(){
+			$('.line-horizontal').css('top', '170px');
+		});
+		$('.detail-table.3th').click(function(){
+			$('.line-horizontal').css('top', '300px');
+		});
+		$('.detail-table.4th').click(function(){
+			$('.line-horizontal').css('top', '430px');
+		});
+		$('.detail-table.5th').click(function(){
+			$('.line-horizontal').css('top', '560px');
+		});
+		$('.detail-table.6th').click(function(){
+			$('.line-horizontal').css('top', '690px');
+		});
+		$('.detail-table.7th').click(function(){
+			$('.line-horizontal').css('top', '820px');
+		});
+		
+	});
+</script>
+
+</body>
+</html>

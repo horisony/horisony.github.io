@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>iPad Portrait</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M82,142 C116.793939,142 145,113.793939 145,79 C145,44.2060608 116.793939,16 82,16 C47.2060608,16 19,44.2060608 19,79 C19,113.793939 47.2060608,142 82,142 Z M101.990153,73.5431725 C105.943916,76.9080766 105.943916,82.2919234 101.990153,85.6568275 L78.4358238,105.76213 C74.4820614,109.127034 71.369525,107.865195 71.369525,102.986084 L71.369525,56.2139159 C71.369525,51.3348048 74.566184,50.0729657 78.4358238,53.4378699 L101.990153,73.5431725 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.719733206   0 0 0 0 0.176030284   0 0 0 0 0.134453001  0 0 0 0.503340127 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPad-Portrait">
+            <g id="Combined-Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FF5E51" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <path d="M102.865384,73.1598016 C107.069402,76.7376896 107.069402,82.4623104 102.865384,86.0401984 L77.8201674,107.418079 C73.616149,110.995967 70.3066026,109.654259 70.3066026,104.466322 L70.3066026,54.7336782 C70.3066026,49.5457406 73.7055962,48.2040326 77.8201674,51.7819206 L102.865384,73.1598016 Z" id="Shape-Copy" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

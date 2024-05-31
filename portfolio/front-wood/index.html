@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style type="text/css">
+		body{
+			margin: 0;
+			
+		}
+		.header{
+			width: 100%;
+			height: 25vh;
+			background: #568FC8;
+			text-align: center;
+			font-weight: 100;
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+		}
+/*		.content{
+			width: 900px;
+			margin: auto;
+			display: flex;
+			justify-content: space-around;
+			align-items: bottom;
+			height: 174px;
+		}*/
+		.head.title{
+			font-size: 1.4vw;
+			font-weight: 400;
+			/*box-shadow: 0 1px 8px #34669A;*/
+			line-height: 150%;
+		}
+		.txt{
+			width: 260px;
+			/*padding-top: 46px;*/
+			text-align: left;
+			float: left;
+			font-size: .9vw;
+		}
+		.headImage{
+			padding-top: 125px;
+			width: 30%;
+			/*height: 140.72px;*/
+			/*align-self: flex-end;*/
+		}
+		.intro-container{
+			width: 100%;
+			position: absolute;
+			top: 25vh;
+			bottom: 8vh;
+			width: 100%;
+			/*background: blue;*/
+			padding: 16px;
+		}
+		.introRow{
+			/*width: 100%;*/
+			/*height: 36vh;*/
+			position: absolute;
+			left: 16px;
+			right: 16px;
+			display: flex;
+			justify-content: center;
+			vertical-align: middle;
+			align-items: center;
+			/*background: red;*/
+		}
+		.intro-img{
+			width: 13%;
+			/*margin-top: 65px;*/
+			padding-right: 20px;
+		}
+	/*	.intro-img.second-img{
+			width: 15%;
+		}*/
+		.second-img{
+			
+			margin-left: 80px;
+		}
+		.introTxt{
+			/*padding-top: 80px;*/
+			line-height: 120%;
+			font-size: .9vw;
+			font-size: #777;
+		}
+		.title2{
+			font-size: 1.4vw;
+			color: #2672BA;
+			line-height: 180%;
+		}
+		.first{
+			top: 16px;
+			bottom: 50%;
+		}
+		.second{
+			top: 50%;
+			bottom: 16px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<!-- <div class="content"> -->
+			<div class="txt">
+				<div class="head title">UI and ETL Monitor</div>
+				Monitor UI and ETL performances, <br/>
+				alert when there's issues.
+			</div>
+			<div class="headImage"><img style="width: 100%;" src="imgs/global.png"></div>
+		<!-- </div> -->
+	</div>
+	<div class="intro-container">
+		<div class="introRow first">
+			<div class="intro-img"><img style="width: 100%;" src="imgs/1.png"></div>
+			<div class="introTxt">
+				<div class="title2">Auto Monitor</div>
+				Check DNA,M1 and NPS Dashboards every 2hrs.<br/>
+				Check ETL Job status every 30 mins.<br/>
+				Check ETL data quality every 30 mins.<br/>
+			</div>
+			<div class="intro-img second-img"><img style="width: 100%;" src="imgs/2.png"></div>
+			<div class="introTxt">
+				<div class="title2">Auto Alert </div>
+				Create Jira Ticket automatically for P1,P2 and P3 issues. <br/>
+				Send SMS Message for P1 issues every 30 mins. <br/>
+			</div>
+			
+		</div>
+		<div class="introRow second">
+			<div class="intro-img"><img style="width: 100%;" src="imgs/3.png"></div>
+			<div class="introTxt">
+				<div class="title2">Manual Check Available</div>
+				Users can check UI performance of specific <br/>
+				dashboard or ETL data quality of specific <br/>
+				table manually.
+			</div>
+			<div class="intro-img second-img"><img style="width: 100%;" src="imgs/4.png"></div>
+			<div class="introTxt">
+				<div class="title2">SLA Report and Alert </div>
+				Display all the created Jira Tickets and SMS Messages, <br/>
+				alert when execution time or data quality is over SLA. 
+			</div>
+		</div>
+	</div>
+</body>
+</html>

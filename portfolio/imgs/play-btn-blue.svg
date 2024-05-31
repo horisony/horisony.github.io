@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>iPad Portrait</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M82.2,142.3 C116.8,142.3 144.8,114.3 144.8,79.7 C144.8,45.1 116.7,17 82.2,17 C47.7,17 19.5,45.1 19.5,79.6 C19.5,114.1 47.6,142.3 82.2,142.3 Z M82.2,134.8 C51.6,134.8 27,110.2 27,79.6 C27,49 51.6,24.5 82.2,24.5 C112.8,24.5 137.4,49.2 137.4,79.7 C137.4,110.2 112.7,134.8 82.2,134.8 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.109803922   0 0 0 0 0.545098039   0 0 0 0 0.643137255  0 0 0 0.55 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M104.6,72.4 C109.3,76.4 109.3,82.8 104.6,86.8 L76.6,110.7 C71.9,114.7 68.2,113.2 68.2,107.4 L68.2,51.8 C68.2,46 72,44.5 76.6,48.5 L104.6,72.4 Z" id="path-3"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.109803922   0 0 0 0 0.545098039   0 0 0 0 0.643137255  0 0 0 0.55 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPad-Portrait">
+            <g id="Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#3CD4F7" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                <use fill="#3CD4F7" fill-rule="evenodd" xlink:href="#path-3"></use>
+            </g>
+        </g>
+    </g>
+</svg>

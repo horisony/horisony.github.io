@@ -1,0 +1,174 @@
+body{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	min-width:1250px;
+}
+.clear{
+	clear:both;
+}
+
+.content-area{
+	width:100%;
+ 	padding:20px;
+    /*margin:auto;*/
+}
+.tab-header-customize>li>a{
+	font-size:1em;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.dashboard{
+	border: 1px solid #efefef;
+	border-radius: 4px;
+	background: white;
+	margin-top: 12px;
+	position: relative;
+}
+.coming{
+	width:100%;
+	height:160px;
+	background: rgba(255,255,255,0.8);
+	position: absolute;
+	top:40px;
+	left: 0;
+	text-align: center;
+	line-height: 160px;
+	font-size:2em;
+	z-index: 10000;
+}
+.health-dash{
+	height:110px;
+	padding:0px 1.2% 12px 1.2%;
+	text-align:center;
+}
+
+.health-item{
+	width:14.26%;
+	float:left;
+	text-align: center;
+	margin-top:9px;
+}
+.increase-decrease-number{
+	color:#00b000;
+}
+.item-text{
+	color:#666;
+}
+.dashboard>header
+{
+	font-size:1.2em;
+	background: #f9f9f9;
+	padding:0px 20px;
+	height:40px;
+	line-height: 40px;
+}
+
+.dashboard>header>span{
+	float:left;
+	font-weight: bold;
+	color:#7d7d7d;
+	font-size:1em;
+}
+.dashboard>header>a{
+	float:right;
+	text-decoration: underline;
+	color:#337ab7;
+	font-size:.85em;
+}
+.dashboard>header>a:hover{
+	color:#34abff;
+}
+.dash-body{
+	padding:0px 1.4% 12px 1.4%;
+	height:160px;
+	text-align:center;
+}
+.col-xs-3{
+	padding-left:0;
+}
+.col-xs-11{
+	padding-left:0;
+	padding-right:0;
+}
+.col-left{
+	width:50%;
+	float:left;
+	padding-right:6px;
+}
+.col-right{
+	width:50%;
+	float:left;
+	padding-left:6px;
+}
+
+.data-text{
+	text-align: center;
+	padding-right:0;
+	padding-left:0;
+	padding-top: 26px;
+} 
+.tab-customize{
+	margin-left:12%;
+	width:auto;
+	float:left;
+}
+.tab-customize li a{
+	/*margin-top: 5px;*/
+	padding:16px 20px 4px 20px;
+	font-size:.85em;
+	border:none;
+	color:#666;
+	font-size:.9em;
+}
+
+.tab-customize>li>a:hover{
+	background: none;
+	border:none;
+	color:#0096ff;
+}
+
+.tab-customize>li.active>a, .tab-customize>li.active>a:focus{
+	border:none;
+	border-bottom: 2px solid #007acf;
+	color:#007acf;
+	background: none;
+}
+.tab-customize>li.active>a:hover{
+	border:none;
+	border-bottom: 2px solid #0096ff;
+	color:#0096ff;
+	background: none;	
+}
+.tab-content>div>span{
+	line-height: 800%;
+	margin-left:-100px;
+}
+.svg-container{
+    display: inline-block;
+    width: 70px;  
+}
+.svg-container>embed{
+	padding:26px 0 6px 0;
+}
+.svg-container>object{
+	padding:26px 0 6px 0;
+}
+.svg-container span small{
+    color:#666;
+	line-height:120%;
+	display:inline-block;
+}
+.txt-center{
+	text-align: center;
+}
+
+.highcharts-series-0>circle{
+	stroke:none;
+}
+.highcharts-series-1>circle{
+	stroke:none;
+}
+
+.highcharts-axis-labels, .highcharts-yaxis-labels{
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+}

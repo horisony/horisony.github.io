@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"  content="text/html; charset=utf-8">  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Copatible" content="IE=edge">
+    <meta name="viewport"  content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>Data Visualization</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="module" style="background-color: #464442;  overflow: hidden; ">
+		<div class="content clearfix">
+			<div class="title" >Data Visualization</div>
+			<div class="txt txt-intro" style="font-size: 16px!important; "> This is a realtime dashboard showing traffic data of eBay website in last 24 hours. It will be displayed on a TV screen everyday in eBay Headquarters in San Jose, everyone passing by can catch a glimpse.</div>
+		</div>
+	</div>
+
+	<div class="module " style="background-color:white; overflow: hidden; ">
+		<div class="content clearfix">
+			<div class="title-main" style="margin-bottom: 20px;">Keywords</div>
+			<div class="txt1 txt-intro" style="font-size: 16px!important;  "> 
+				<div class="col-xs-4 padding-none"><div class="key" style="color: white; background-color: #79BB3D;">Concise</div><span style = "padding:12px 12px; display: inline-block; color: #79BB3D;">Litmit the number of charts and metrics, show only the most important data.</span> </div>
+				<div class="col-xs-4 padding-none" ><div class="key" style="color: white; background-color: #2296F2;">Focus</div><span style = "padding:12px 12px; display: inline-block; color: #2296F2;">More important the data is, bigger size it's shown on the screen.</span> </div>
+				<div class="col-xs-4 padding-none"><div class="key" style="color: white; background-color: #9946F5;">Delightful</div><span style = "padding:12px 12px; display: inline-block; color: #9946F5;">Make it with vivid color, delight people who are looking at this dashboard.</span> </div>
+				<!-- <div class="col-xs-3 padding-none"><div class="key">Concise</div></div> -->
+			</div>
+			<img style="width: 100%; margin-top: 55px;" src="imgs/pro-info/info1.png">
+			<div class="tools" >Designed with Sketch and PS<img src="imgs/logos/sketch.jpg"><img src="imgs/logos/ps.jpg"></div>
+		</div>
+	</div>
+<div style="text-align: center; margin-bottom: 55px; font-size: 1.2em;">
+	For more data visualization work, please view my graduation presentation. 
+	<a href="file/baoling-thesis.pdf" style="display: block;" target="_blank"><button class="download-btn download-btn-blue1">Data Visualization with tableau</button></a></div>
+</div>
+
+	<!-- <div class="module" style="background-color: white;">
+		<img style="width: 100%; " src="imgs/pro-info/realtime.png">
+	</div> -->
+
+	<a href="#"><div class="to-top"></div></a>
+	
+	<div class="footer ports">
+		This website is designed and developed by Baoling Yang, all copyright reserved.<br/>
+		Copyright @杨宝玲 2017
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() { 			
+			$(".to-top").hide();
+			currTop = 0;
+			$(window).scroll(function(){
+				var windowTop = $(window).scrollTop()||0;
+				if (windowTop > 200){
+					$(".to-top").fadeIn(300);
+				}
+				else{
+					$(".to-top").fadeOut(300);
+				}
+				if(windowTop >= currTop){
+					$(".navbar").addClass("navbar-hide");
+				}else{
+					$(".navbar").removeClass("navbar-hide")
+					if(windowTop > 20){
+						$(".navbar").addClass("navbar-custom");
+					}else{
+						$(".navbar").removeClass("navbar-custom");
+					}
+				}
+
+				currTop = windowTop;
+
+			});
+
+			$(".tags>.btn").click(function(){
+				$(this).siblings().removeClass("active");
+				$(this).addClass("active");
+			});
+		});
+
+		var myVideo0 = document.getElementById("video0"); 
+		var myBtn0 = document.getElementById("play-btn0"); 
+		function playPause0() { 
+			// myBtn1.setAttribute('src', 'imgs/play-btn.svg');
+		    if (myVideo0.paused) {
+		    	myVideo0.play();
+		    	myVideo0.controls="controls";
+		    	// myBtn1.attr('src', 'imgs/pause-btn.svg'); 
+		    	myBtn0.style.display="none";
+
+		    } else {
+		        myVideo0.pause();
+		        // myBtn1.setAttribute('src', 'imgs/pause-btn.svg');
+		        myBtn0.style.display="inline-block";
+		    }
+		} 
+
+		var myVideo1 = document.getElementById("video1"); 
+		var myBtn1 = document.getElementById("play-btn1"); 
+		function playPause1() { 
+			// myBtn1.setAttribute('src', 'imgs/play-btn.svg');
+		    if (myVideo1.paused) {
+		    	myVideo1.play();
+		    	// myBtn1.attr('src', 'imgs/pause-btn.svg'); 
+		    	myBtn1.style.display="none";
+		    } else {
+		        myVideo1.pause();
+		        // myBtn1.setAttribute('src', 'imgs/pause-btn.svg');
+		        myBtn1.style.display="inline-block";
+		    }
+		} 
+
+		var myVideo2 = document.getElementById("video2");
+		var myBtn2 = document.getElementById("play-btn2");  
+		function playPause2() { 
+		    if (myVideo2.paused){
+		        myVideo2.play();
+		        myBtn2.style.display="none"; 
+		    }
+		    else{
+		        myVideo2.pause(); 
+		        myBtn2.style.display="inline-block";
+		    } 
+		} 
+	</script>
+
+</body>
+</html>

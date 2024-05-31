@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"  content="text/html; charset=utf-8">  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Copatible" content="IE=edge">
+    <meta name="viewport"  content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>We Are The Customer</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="module banner banner-responsive" style="background-color:#3b4757; overflow: hidden;">
+		<div class="content clearfix">
+			<div class="col-md-6-my intro" style="padding-top: 80px;">
+				<div class="title">We Are The Customer</div>
+				<div class="txt txt-intro" style="color: rgba(255, 255, 255, 1); ">"We Are The Customer" (WATC) is a website where eBay emplyees can compete for buying, selling on eBay, or visiting eBay. I am responsible for some new features' design like 'What's good', 'Duel Recommendation' and 'Date Indication'.</div>
+			</div>
+			<div class="col-md-6-my">
+				<img class="img-ai-intro" src="imgs/pro-game/game.png">
+			</div>
+		</div>
+	</div>
+
+	<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1" style='text-align: left;'> 1. What's Good</div>
+			<div class="txt1" style='text-align: left;'> After holiday season, many people must have purchased a lot of items on eBay, why not share them with others. <br/> We provide a platform where every eBay employee can share what they've bought on eBay, other people can view and vote by thumb up, or go to the item's link on eBay and buy it. 
+
+			</div>
+			<div class="design3-container">
+				<img style="width: 100%; margin-top: 20px;" src="imgs/pro-game/game-design3.png">
+				<div class="gift-gif">
+					<img style="width: 70%;" src="imgs/pro-game/gift.gif">
+					<div>To make it noticed by users, I made it animated.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="module" style="background-color: #f6f5f4;">
+		<div class="content">
+			<div class="title1" style='text-align: left;'> 2. Duel Recommendation</div>
+			<div class="txt1" style='text-align: left;'>To make it easier for people to find someone to duel, we added the 'Duel Recommendation' module, where 5 people will be shown on top of duel page, and users can duel them as quickly as clicking a button. This greatly increased duel usage.</div>
+			<img style="width: 100%; margin-top: 20px;" src="imgs/pro-game/game-design2.png">
+		</div>
+	</div>
+
+	<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1" style='text-align: left;'> 3. Competition Date Indication</div>
+			<div class="txt1" style='text-align: left;'>Even with date range of competitions below competition title, users couldn't get an intuitive sense about how long will this competition start or end. <br/> We decided to add date labels on top of banners to show how many days will this competition start or end, arousing users' emtions like anticipation or sense of urgency.
+			</div>
+			<img style="width: 100%; margin-top: 20px;" src="imgs/pro-game/game-design1.png">
+		</div>
+	</div>
+
+
+
+	<a href="#"><div class="to-top"></div></a>
+	
+	<div class="footer ports">
+		This website is designed and developed by Baoling Yang, all copyright reserved.<br/>
+		Copyright @杨宝玲 2017
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() { 			
+			$(".to-top").hide();
+			currTop = 0;
+			$(window).scroll(function(){
+				var windowTop = $(window).scrollTop()||0;
+				if (windowTop > 200){
+					$(".to-top").fadeIn(300);
+				}
+				else{
+					$(".to-top").fadeOut(300);
+				}
+				if(windowTop >= currTop){
+					$(".navbar").addClass("navbar-hide");
+				}else{
+					$(".navbar").removeClass("navbar-hide")
+					if(windowTop > 20){
+						$(".navbar").addClass("navbar-custom");
+					}else{
+						$(".navbar").removeClass("navbar-custom");
+					}
+				}
+
+				currTop = windowTop;
+
+			});
+
+			$(".tags>.btn").click(function(){
+				$(this).siblings().removeClass("active");
+				$(this).addClass("active");
+			});
+		});
+
+		var myVideo0 = document.getElementById("video0"); 
+		var myBtn0 = document.getElementById("play-btn0"); 
+		function playPause0() { 
+			// myBtn1.setAttribute('src', 'imgs/play-btn.svg');
+		    if (myVideo0.paused) {
+		    	myVideo0.play();
+		    	myVideo0.controls="controls";
+		    	// myBtn1.attr('src', 'imgs/pause-btn.svg'); 
+		    	myBtn0.style.display="none";
+
+		    } else {
+		        myVideo0.pause();
+		        // myBtn1.setAttribute('src', 'imgs/pause-btn.svg');
+		        myBtn0.style.display="inline-block";
+		    }
+		} 
+
+		var myVideo1 = document.getElementById("video1"); 
+		var myBtn1 = document.getElementById("play-btn1"); 
+		function playPause1() { 
+			// myBtn1.setAttribute('src', 'imgs/play-btn.svg');
+		    if (myVideo1.paused) {
+		    	myVideo1.play();
+		    	// myBtn1.attr('src', 'imgs/pause-btn.svg'); 
+		    	myBtn1.style.display="none";
+		    } else {
+		        myVideo1.pause();
+		        // myBtn1.setAttribute('src', 'imgs/pause-btn.svg');
+		        myBtn1.style.display="inline-block";
+		    }
+		} 
+
+		var myVideo2 = document.getElementById("video2");
+		var myBtn2 = document.getElementById("play-btn2");  
+		function playPause2() { 
+		    if (myVideo2.paused){
+		        myVideo2.play();
+		        myBtn2.style.display="none"; 
+		    }
+		    else{
+		        myVideo2.pause(); 
+		        myBtn2.style.display="inline-block";
+		    } 
+		} 
+	</script>
+
+</body>
+</html>

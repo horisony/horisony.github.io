@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"  content="text/html; charset=utf-8">  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Copatible" content="IE=edge">
+    <meta name="viewport"  content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>Site Merchandiser Dashboard</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="module banner banner-responsive" style="background-color:#11b07c; overflow: hidden;">
+		<div class="content clearfix">
+			<div class="col-md-6-my intro" style="padding-top: 80px;">
+				<div class="title">Site Merchandiser Dashboard</div>
+				<div class="txt txt-intro" style="color: rgba(255, 255, 255, 1); ">Site Merchandiser Dashboard (SMD) is a self-service dashboard that helps eBay site merchandisers monitor eBay web pages in a more personalized way. By creating personalized page groups, site merchandisers can monitor both the overall performance of whole page group and detail performance of every single page.</div>
+			</div>
+			<div class="col-md-6-my">
+				<img class="img-ai-intro" src="imgs/pro-smd/smd.png">
+			</div>
+		</div>
+	</div>
+	<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1">User/Persona</div>
+			<div class="txt1"></div>
+			<img style="width: 100%; background: #dfdfdf;" src="imgs/pro-smd/persona.png">
+		</div>
+	</div>
+	<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1">User flow</div>
+			<div class="txt1"></div>
+			<a href="imgs/pro-smd/flow-l.png" target="_blank"><img style="width: 100%; background: #dfdfdf;" src="imgs/pro-smd/flow.png"></a>
+		</div>
+	</div>
+	<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1">Wireframe</div>
+			<div class="txt1"></div>
+			<a href="imgs/pro-smd/wireframe.png" target="_blank"><img style="width: 100%; background: #dfdfdf;" src="imgs/pro-smd/wireframe.png"></a>
+		</div>
+	</div>
+		<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1"> Design Details</div>
+			<div class="txt1"></div>
+			<a href="imgs/pro-smd/detail-l.png" target="_blank"><img style="width: 100%; background: #dfdfdf;" src="imgs/pro-smd/detail.png"></a>
+		</div>
+	</div>
+
+	<div class="module" style="background-color: white;">
+		<div class="content">
+			<div class="title1">Mockup Demo Video</div>
+			<a href="javascript: playPause0();">
+				<div class="video-container" >	
+				<video id="video0" style="width: 100%; height: 100%;" poster="imgs/pro-smd/poster.png">
+					<source src="video/smd.mp4" type="video/mp4">
+				  	<source src="video/smd.ogg" type="video/ogg">
+					Your browser does not support the video tag.
+				</video>
+				<img class="play-btn" id="play-btn0" style="width: 125px;" src="imgs/play-btn.svg"/>
+				</div>
+			</a>
+			<div class="tools">Made with Axure<img src="imgs/logos/axure.png"></div>
+		</div>
+	</div>
+
+
+
+	<a href="#"><div class="to-top"></div></a>
+	
+	<div class="footer ports">
+		This website is designed and developed by Baoling Yang, all copyright reserved.<br/>
+		Copyright @杨宝玲 2017
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() { 			
+			$(".to-top").hide();
+			currTop = 0;
+			$(window).scroll(function(){
+				var windowTop = $(window).scrollTop()||0;
+				if (windowTop > 200){
+					$(".to-top").fadeIn(300);
+				}
+				else{
+					$(".to-top").fadeOut(300);
+				}
+				if(windowTop >= currTop){
+					$(".navbar").addClass("navbar-hide");
+				}else{
+					$(".navbar").removeClass("navbar-hide")
+					if(windowTop > 20){
+						$(".navbar").addClass("navbar-custom");
+					}else{
+						$(".navbar").removeClass("navbar-custom");
+					}
+				}
+
+				currTop = windowTop;
+
+			});
+
+			$(".tags>.btn").click(function(){
+				$(this).siblings().removeClass("active");
+				$(this).addClass("active");
+			});
+		});
+
+		var myVideo0 = document.getElementById("video0"); 
+		var myBtn0 = document.getElementById("play-btn0"); 
+		function playPause0() { 
+			// myBtn1.setAttribute('src', 'imgs/play-btn.svg');
+		    if (myVideo0.paused) {
+		    	myVideo0.play();
+		    	myVideo0.controls="controls";
+		    	// myBtn1.attr('src', 'imgs/pause-btn.svg'); 
+		    	myBtn0.style.display="none";
+
+		    } else {
+		        myVideo0.pause();
+		        // myBtn1.setAttribute('src', 'imgs/pause-btn.svg');
+		        myBtn0.style.display="inline-block";
+		    }
+		} 
+
+		var myVideo1 = document.getElementById("video1"); 
+		var myBtn1 = document.getElementById("play-btn1"); 
+		function playPause1() { 
+			// myBtn1.setAttribute('src', 'imgs/play-btn.svg');
+		    if (myVideo1.paused) {
+		    	myVideo1.play();
+		    	// myBtn1.attr('src', 'imgs/pause-btn.svg'); 
+		    	myBtn1.style.display="none";
+		    } else {
+		        myVideo1.pause();
+		        // myBtn1.setAttribute('src', 'imgs/pause-btn.svg');
+		        myBtn1.style.display="inline-block";
+		    }
+		} 
+
+		var myVideo2 = document.getElementById("video2");
+		var myBtn2 = document.getElementById("play-btn2");  
+		function playPause2() { 
+		    if (myVideo2.paused){
+		        myVideo2.play();
+		        myBtn2.style.display="none"; 
+		    }
+		    else{
+		        myVideo2.pause(); 
+		        myBtn2.style.display="inline-block";
+		    } 
+		} 
+	</script>
+
+</body>
+</html>
