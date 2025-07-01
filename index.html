@@ -24,6 +24,68 @@
             color: #333;
             margin-bottom: 32px;
         }
+        .filter-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid #e9ecef;
+        }
+        .filter-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .filter-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .filter-item label {
+            font-weight: 600;
+            color: #495057;
+            font-size: 14px;
+        }
+        .filter-item select {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            background: #fff;
+            font-size: 14px;
+            min-width: 120px;
+        }
+        .filter-item select:focus {
+            outline: none;
+            border-color: #1890ff;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        }
+        .filter-actions {
+            margin-left: auto;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #1890ff;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #40a9ff;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            margin-left: 8px;
+        }
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -56,11 +118,42 @@
         .intent-high { color: #fff; background: #f5222d; }
         .intent-medium { color: #fff; background: #fa8c16; }
         .intent-low { color: #fff; background: #1890ff; }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>客户信息表</h1>
+        
+        <!-- 筛选栏目 -->
+        <div class="filter-section">
+            <div class="filter-row">
+                <div class="filter-item">
+                    <label for="customerType">新老客户</label>
+                    <select id="customerType">
+                        <option value="">全部</option>
+                        <option value="新客户">新客户</option>
+                        <option value="老客户">老客户</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="intentLevel">意向度</label>
+                    <select id="intentLevel">
+                        <option value="">全部</option>
+                        <option value="高">高</option>
+                        <option value="中">中</option>
+                        <option value="低">低</option>
+                    </select>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn btn-primary" onclick="applyFilters()">筛选</button>
+                    <button class="btn btn-secondary" onclick="resetFilters()">重置</button>
+                </div>
+            </div>
+        </div>
+
         <table>
             <thead>
                 <tr>
@@ -101,7 +194,7 @@
                     <td>2024-06-02</td>
                 </tr>
                 <tr>
-                    <td>RPAtest2</td>
+                    <td>RPA王</td>
                     <td>13566554433</td>
                     <td><span class="tag tag-new">新客户</span></td>
                     <td><span class="tag intent-medium">中</span></td>
@@ -110,5 +203,37 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+        function applyFilters() {
+            const customerType = document.getElementById('customerType').value;
+            const intentLevel = document.getElementById('intentLevel').value;
+            const rows = document.querySelectorAll('tbody tr');
+
+            rows.forEach(row => {
+                const customerTypeCell = row.querySelector('td:nth-child(3) span').textContent;
+                const intentLevelCell = row.querySelector('td:nth-child(4) span').textContent;
+
+                const customerTypeMatch = !customerType || customerTypeCell === customerType;
+                const intentLevelMatch = !intentLevel || intentLevelCell === intentLevel;
+
+                if (customerTypeMatch && intentLevelMatch) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+        }
+
+        function resetFilters() {
+            document.getElementById('customerType').value = '';
+            document.getElementById('intentLevel').value = '';
+            
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.classList.remove('hidden');
+            });
+        }
+    </script>
 </body>
 </html> 
