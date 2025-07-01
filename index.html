@@ -285,8 +285,10 @@
 
                 if (customerTypeMatch && intentLevelMatch) {
                     row.classList.remove('hidden');
+                    row.classList.add('filtered-row');
                 } else {
                     row.classList.add('hidden');
+                    row.classList.remove('filtered-row');
                 }
             });
         }
@@ -307,10 +309,11 @@
                 }
             });
             
-            // 显示所有行
+            // 显示所有行并移除filtered-row class
             const rows = document.querySelectorAll('tbody tr');
             rows.forEach(row => {
                 row.classList.remove('hidden');
+                row.classList.remove('filtered-row');
             });
         }
     </script>
