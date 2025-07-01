@@ -121,6 +121,37 @@
         .hidden {
             display: none;
         }
+        .button-group {
+            display: flex;
+            border: 1px solid #d9d9d9;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #fff;
+            color: #666;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+            min-width: 60px;
+            border-right: 1px solid #d9d9d9;
+        }
+        .filter-btn:last-child {
+            border-right: none;
+        }
+        .filter-btn:hover {
+            background: #f0f8ff;
+            color: #1890ff;
+        }
+        .filter-btn.active {
+            background: #1890ff;
+            color: #fff;
+        }
+        .filter-btn.active:hover {
+            background: #40a9ff;
+        }
     </style>
 </head>
 <body>
@@ -131,24 +162,23 @@
         <div class="filter-section">
             <div class="filter-row">
                 <div class="filter-item">
-                    <label for="customerType">新老客户</label>
-                    <select id="customerType">
-                        <option value="">全部</option>
-                        <option value="新客户">新客户</option>
-                        <option value="老客户">老客户</option>
-                    </select>
+                    <label>新老客户</label>
+                    <div class="button-group">
+                        <button class="filter-btn active" data-type="customerType" data-value="">全部</button>
+                        <button class="filter-btn" data-type="customerType" data-value="新客户">新客户</button>
+                        <button class="filter-btn" data-type="customerType" data-value="老客户">老客户</button>
+                    </div>
                 </div>
                 <div class="filter-item">
-                    <label for="intentLevel">意向度</label>
-                    <select id="intentLevel">
-                        <option value="">全部</option>
-                        <option value="高">高</option>
-                        <option value="中">中</option>
-                        <option value="低">低</option>
-                    </select>
+                    <label>意向度</label>
+                    <div class="button-group">
+                        <button class="filter-btn active" data-type="intentLevel" data-value="">全部</button>
+                        <button class="filter-btn" data-type="intentLevel" data-value="高">高</button>
+                        <button class="filter-btn" data-type="intentLevel" data-value="中">中</button>
+                        <button class="filter-btn" data-type="intentLevel" data-value="低">低</button>
+                    </div>
                 </div>
                 <div class="filter-actions">
-                    <button class="btn btn-primary" onclick="applyFilters()">筛选</button>
                     <button class="btn btn-secondary" onclick="resetFilters()">重置</button>
                 </div>
             </div>
@@ -205,17 +235,53 @@
     </div>
 
     <script>
+        // 存储当前筛选状态
+        let currentFilters = {
+            customerType: '',
+            intentLevel: ''
+        };
+
+        // 为所有筛选按钮添加点击事件
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const type = this.getAttribute('data-type');
+                    const value = this.getAttribute('data-value');
+                    
+                    // 更新当前筛选状态
+                    currentFilters[type] = value;
+                    
+                    // 更新按钮状态
+                    updateButtonStates(type, this);
+                    
+                    // 应用筛选
+                    applyFilters();
+                });
+            });
+        });
+
+        // 更新按钮状态
+        function updateButtonStates(type, clickedButton) {
+            const buttonGroup = clickedButton.parentElement;
+            const buttons = buttonGroup.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            clickedButton.classList.add('active');
+        }
+
         function applyFilters() {
-            const customerType = document.getElementById('customerType').value;
-            const intentLevel = document.getElementById('intentLevel').value;
             const rows = document.querySelectorAll('tbody tr');
 
             rows.forEach(row => {
                 const customerTypeCell = row.querySelector('td:nth-child(3) span').textContent;
                 const intentLevelCell = row.querySelector('td:nth-child(4) span').textContent;
 
-                const customerTypeMatch = !customerType || customerTypeCell === customerType;
-                const intentLevelMatch = !intentLevel || intentLevelCell === intentLevel;
+                const customerTypeMatch = !currentFilters.customerType || customerTypeCell === currentFilters.customerType;
+                const intentLevelMatch = !currentFilters.intentLevel || intentLevelCell === currentFilters.intentLevel;
 
                 if (customerTypeMatch && intentLevelMatch) {
                     row.classList.remove('hidden');
@@ -226,9 +292,22 @@
         }
 
         function resetFilters() {
-            document.getElementById('customerType').value = '';
-            document.getElementById('intentLevel').value = '';
+            // 重置筛选状态
+            currentFilters = {
+                customerType: '',
+                intentLevel: ''
+            };
             
+            // 重置按钮状态
+            const allButtons = document.querySelectorAll('.filter-btn');
+            allButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-value') === '') {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // 显示所有行
             const rows = document.querySelectorAll('tbody tr');
             rows.forEach(row => {
                 row.classList.remove('hidden');
